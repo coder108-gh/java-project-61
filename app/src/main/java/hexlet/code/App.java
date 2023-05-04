@@ -1,8 +1,52 @@
 package hexlet.code;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class App {
+    private final static int GREET = 1;
+    private final static int EVEN = 2;
+    private final static int EXIT = 0;
+    private final static String[] terms = {"Exit", "Greet", "Even"};
     public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games!");
-        Cli.logon();
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        while (true) {
+            choice = getChoice(scanner);
+            if (choice <= EXIT) {
+                break;
+            }
+            startGame(choice, scanner);
+        }
+       scanner.close();
+    }
+
+    public static int getChoice(Scanner scanner) {
+
+        System.out.println("Please enter the game number and press Enter.");
+        for (int i = 1; i< terms.length; i++) {
+            System.out.printf("%d - %s", i, terms[i]);
+            System.out.println();
+        }
+        System.out.printf("%d - %s", 0, terms[0]);
+        System.out.println();
+        System.out.print("Your choice: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println();
+        return  choice;
+    }
+    public static void startGame(int choice, Scanner scanner) {
+        String userName = Cli.logon(scanner);
+        Cli.greet(userName);
+        switch (choice) {
+            case GREET:
+                break;
+            case EVEN:
+                Even.play(scanner, userName);
+                break;
+            default:
+                System.out.println("Incorrect choice. Try again");
+        }
     }
 }
