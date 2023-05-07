@@ -1,13 +1,14 @@
 package hexlet.code;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
     private final static int GREET = 1;
     private final static int EVEN = 2;
+
+    private final static int CALC = 3;
     private final static int EXIT = 0;
-    private final static String[] terms = {"Exit", "Greet", "Even"};
+    private final static String[] terms = {"Exit", "Greet", "Even", "Calc"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -39,11 +40,15 @@ public class App {
     public static void startGame(int choice, Scanner scanner) {
         String userName = Cli.logon(scanner);
         Cli.greet(userName);
+        Engine.userName = userName;
         switch (choice) {
             case GREET:
                 break;
             case EVEN:
-                Even.play(scanner, userName);
+                Even.play(scanner);
+                break;
+            case CALC:
+                Calc.play(scanner);
                 break;
             default:
                 System.out.println("Incorrect choice. Try again");
