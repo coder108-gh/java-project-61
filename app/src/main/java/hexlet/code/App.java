@@ -7,8 +7,10 @@ public class App {
     private final static int EVEN = 2;
 
     private final static int CALC = 3;
+    private final static int GCD = 4;
+
     private final static int EXIT = 0;
-    private final static String[] terms = {"Exit", "Greet", "Even", "Calc"};
+    private final static String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -49,6 +51,9 @@ public class App {
                 break;
             case CALC:
                 Calc.play(scanner);
+                break;
+            case GCD:
+                Gcd.play(scanner);
                 break;
             default:
                 System.out.println("Incorrect choice. Try again");

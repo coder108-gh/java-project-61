@@ -3,7 +3,6 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Calc {
-
     private static final int MAX_NUM = 3;
     private static final int MAX_VAL = 100;
 
@@ -11,8 +10,6 @@ public class Calc {
 
 
     public static void play(Scanner scanner) {
-
-
 
         String[] questions = new String[MAX_NUM];
         int[] answers = new int[MAX_NUM];
@@ -43,8 +40,4 @@ public class Calc {
         Engine.play(scanner);
 
     }
-
-
-
-
 }

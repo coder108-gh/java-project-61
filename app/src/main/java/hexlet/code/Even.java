@@ -7,9 +7,7 @@ public class Even {
     private static final int MAX_NUM = 3;
     public static void play(Scanner scanner) {
 
-
         Engine.isStringType = true;
-
 
         String[] questions = new String[MAX_NUM];
         String[] answers = new String[MAX_NUM];
