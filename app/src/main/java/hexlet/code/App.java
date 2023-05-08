@@ -9,9 +9,10 @@ public class App {
     private final static int CALC = 3;
     private final static int GCD = 4;
     private final static int PROGR = 5;
+    private final static int PRIME = 6;
     private final static int EXIT = 0;
 
-    private final static String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression"};
+    private final static String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -58,6 +59,10 @@ public class App {
                 break;
             case PROGR:
                 Progression.play(scanner);
+                break;
+            case PRIME:
+                Prime.play(scanner);
+                break;
             default:
                 System.out.println("Incorrect choice. Try again");
         }
