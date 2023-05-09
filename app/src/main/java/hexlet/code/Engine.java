@@ -9,27 +9,27 @@ public class Engine {
     private static String[] answers;
     private static int[] answersInt;
 
-    public static void setIsStringType(boolean isStringType) {
-        Engine.isStringType = isStringType;
+    public static void setIsStringType(boolean isString) {
+        Engine.isStringType = isString;
     }
     public static boolean getIsStringType() {
         return Engine.isStringType;
     }
-    public static void setUserName(String userName) {
-        Engine.userName = userName;
+    public static void setUserName(String user) {
+        Engine.userName = user;
     }
     public static String getUserName() {
         return Engine.userName;
     }
 
-    public static void setQuestions(String[] questions) {
-        Engine.questions = questions;
+    public static void setQuestions(String[] quest) {
+        Engine.questions = quest;
     }
-    public static void setAnswers(String[] answers) {
-        Engine.answers = answers;
+    public static void setAnswers(String[] answersL) {
+        Engine.answers = answersL;
     }
-    public static void setAnswersInt(int[] answersInt) {
-        Engine.answersInt = answersInt;
+    public static void setAnswersInt(int[] answersIntL) {
+        Engine.answersInt = answersIntL;
     }
     public static String[] getQuestions() {
         return Engine.questions;
