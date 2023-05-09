@@ -3,11 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
-     public static boolean isStringType;
-
-     public static String userName;
-
+    public static boolean isStringType;
+    public static String userName;
     public static String[] questions;
     public static String[] answers;
     public static int[] answersInt;

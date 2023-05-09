@@ -3,16 +3,15 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    private final static int GREET = 1;
-    private final static int EVEN = 2;
+    private static final  int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGR = 5;
+    private static final int PRIME = 6;
+    private static final int EXIT = 0;
 
-    private final static int CALC = 3;
-    private final static int GCD = 4;
-    private final static int PROGR = 5;
-    private final static int PRIME = 6;
-    private final static int EXIT = 0;
-
-    private final static String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
+    private static final String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = getChoice(scanner);
