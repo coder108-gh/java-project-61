@@ -15,12 +15,8 @@ public class App {
     private final static String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice;
-        while (true) {
-            choice = getChoice(scanner);
-            if (choice <= EXIT) {
-                break;
-            }
+        int choice = getChoice(scanner);
+        if (choice > EXIT) {
             startGame(choice, scanner);
         }
        scanner.close();
