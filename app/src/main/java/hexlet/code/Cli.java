@@ -12,6 +12,6 @@ public class Cli {
 
     }
     public static void greet (String userName) {
-        System.out.println(String.format("Hello, %s", userName));
+        System.out.println(String.format("Hello, %s!", userName));
     }
 }
