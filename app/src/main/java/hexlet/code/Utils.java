@@ -3,9 +3,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 
 public class Utils {
-    private static final int[] FIRST_PRIME = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+    private static final int[] FIRST_PRIME = {
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101
+    };
     public static int getRandom(int maxValue) {
-        return (int)(Math.random() * maxValue);
+        return (int) (Math.random() * maxValue);
     }
 
     public static int gcd(int n1, int n2) {
@@ -16,7 +18,7 @@ public class Utils {
     }
 
     public static int[] getProgression(int startValue, int delta, int count) {
-        int progression[] = new int[count];
+        int[] progression = new int[count];
         progression[0] = startValue;
         for (int i = 1; i < count; i++) {
             progression[i] = progression[i - 1] + delta;
@@ -32,7 +34,7 @@ public class Utils {
            }
        }
 
-       int stopValue = (int)Math.sqrt(number) + 1;
+       int stopValue = (int) Math.sqrt(number) + 1;
        for (int i = 0; i < FIRST_PRIME.length; i++) {
            if (FIRST_PRIME[i] > stopValue) {
                return  true;
@@ -43,11 +45,11 @@ public class Utils {
        }
 
        int divider = FIRST_PRIME[FIRST_PRIME.length - 1] + 2;
-       while(divider <= stopValue) {
+       while (divider <= stopValue) {
            if (number % divider == 0) {
                return false;
            }
-           divider +=2;
+           divider += 2;
        }
        return true;
 

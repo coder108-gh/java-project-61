@@ -7,7 +7,7 @@ public class Prime {
     private static final int MAX_NUM = 3;
     public static void play(Scanner scanner) {
 
-        Engine.isStringType = true;
+        Engine.setIsStringType(true);
 
         String[] questions = new String[MAX_NUM];
         String[] answers = new String[MAX_NUM];
@@ -16,8 +16,8 @@ public class Prime {
             questions[i] = Integer.toString(tmp);
             answers[i] = Utils.isPrime(tmp) ? "yes" : "no";
         }
-        Engine.questions = questions;
-        Engine.answers = answers;
+        Engine.setQuestions(questions);
+        Engine.setAnswers(answers);
 
         Engine.showDescription("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Engine.play(scanner);

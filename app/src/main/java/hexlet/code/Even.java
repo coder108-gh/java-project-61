@@ -7,17 +7,16 @@ public class Even {
     private static final int MAX_NUM = 3;
     public static void play(Scanner scanner) {
 
-        Engine.isStringType = true;
-
         String[] questions = new String[MAX_NUM];
         String[] answers = new String[MAX_NUM];
         for (int i = 0; i < MAX_NUM; i++) {
             int tmp = Utils.getRandom(MAX_VAL);
             questions[i] = Integer.toString(tmp);
-            answers[i] =tmp % 2 ==0 ? "yes" : "no";
+            answers[i] = tmp % 2 == 0 ? "yes" : "no";
         }
-        Engine.questions = questions;
-        Engine.answers = answers;
+        Engine.setQuestions(questions);
+        Engine.setAnswers(answers);
+        Engine.setIsStringType(true);
 
         Engine.showDescription("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Engine.play(scanner);
@@ -25,6 +24,3 @@ public class Even {
     }
 
 }
-
-
-

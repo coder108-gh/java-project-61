@@ -17,15 +17,15 @@ public class Progression {
 
                 for (int i = 0; i < MAX_NUM; i++) {
 
-                        int delta = Utils.getRandom(MAX_DELTA)+1;
+                        int delta = Utils.getRandom(MAX_DELTA) + 1;
                         int count = MAX_COUNT - Utils.getRandom(MIN_COUNT);
-                        int hiddenPos = Utils.getRandom(count-2) + 1;
+                        int hiddenPos = Utils.getRandom(count - 2) + 1;
 
                         int[] progression = Utils.getProgression(Utils.getRandom(MAX_START_VALUE), delta, count);
                         String[] tmp = new String[progression.length];
                         for (int ind = 0; ind < progression.length; ind++) {
                                 if (ind == hiddenPos) {
-                                        tmp[ind] = ".." ;
+                                        tmp[ind] = "..";
                                 } else {
                                         tmp[ind] = Integer.toString(progression[ind]);
                                 }
@@ -34,9 +34,9 @@ public class Progression {
                         questions[i]  = String.join(" ", tmp);
 
                 }
-                Engine.questions = questions;
-                Engine.answersInt = answers;
-                Engine.isStringType = false;
+                Engine.setQuestions(questions);
+                Engine.setAnswersInt(answers);
+                Engine.setIsStringType(false);
 
                 Engine.showDescription("What number is missing in the progression?");
                 Engine.play(scanner);
@@ -44,3 +44,4 @@ public class Progression {
         }
 
 }
+

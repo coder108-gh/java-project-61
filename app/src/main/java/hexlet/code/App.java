@@ -11,7 +11,7 @@ public class App {
     private static final int PRIME = 6;
     private static final int EXIT = 0;
 
-    private static final String[] terms = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
+    private static final String[] TERMS = {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = getChoice(scanner);
@@ -24,11 +24,11 @@ public class App {
     public static int getChoice(Scanner scanner) {
 
         System.out.println("Please enter the game number and press Enter.");
-        for (int i = 1; i< terms.length; i++) {
-            System.out.printf("%d - %s", i, terms[i]);
+        for (int i = 1; i < TERMS.length; i++) {
+            System.out.printf("%d - %s", i, TERMS[i]);
             System.out.println();
         }
-        System.out.printf("%d - %s", 0, terms[0]);
+        System.out.printf("%d - %s", 0, TERMS[0]);
         System.out.println();
         System.out.print("Your choice: ");
         int choice = scanner.nextInt();
@@ -39,7 +39,7 @@ public class App {
     public static void startGame(int choice, Scanner scanner) {
         String userName = Cli.logon(scanner);
         Cli.greet(userName);
-        Engine.userName = userName;
+        Engine.setUserName(userName);
         switch (choice) {
             case GREET:
                 break;

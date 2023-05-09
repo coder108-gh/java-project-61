@@ -3,18 +3,50 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static boolean isStringType;
-    public static String userName;
-    public static String[] questions;
-    public static String[] answers;
-    public static int[] answersInt;
+    private static boolean isStringType;
+    private static String userName;
+    private static String[] questions;
+    private static String[] answers;
+    private static int[] answersInt;
+
+    public static void setIsStringType(boolean isStringType) {
+        Engine.isStringType = isStringType;
+    }
+    public static boolean getIsStringType() {
+        return Engine.isStringType;
+    }
+    public static void setUserName(String userName) {
+        Engine.userName = userName;
+    }
+    public static String getUserName() {
+        return Engine.userName;
+    }
+
+    public static void setQuestions(String[] questions) {
+        Engine.questions = questions;
+    }
+    public static void setAnswers(String[] answers) {
+        Engine.answers = answers;
+    }
+    public static void setAnswersInt(int[] answersInt) {
+        Engine.answersInt = answersInt;
+    }
+    public static String[] getQuestions() {
+        return Engine.questions;
+    }
+    public static String[] getAnswers() {
+        return Engine.answers;
+    }
+    public static int[] getAnswersInt() {
+        return  Engine.answersInt;
+    }
 
     public static void showDescription(String descr) {
         System.out.println(descr);
     }
 
     public static void showQuestion(String question) {
-        System.out.println(String.format("Question: %s",question));
+        System.out.println(String.format("Question: %s", question));
         System.out.print("Your answer: ");
     }
 
@@ -24,20 +56,22 @@ public class Engine {
         String answer = scanner.nextLine();
 
         if (isStringType) {
-            correctStrAns= answers[numAttempt];
+            correctStrAns =  answers[numAttempt];
             isCorrect = answer.equalsIgnoreCase(correctStrAns);
 
         } else {
             int correctIntAns = answersInt[numAttempt];
             int answerInt = Integer.parseInt(answer);
-            isCorrect = (answerInt==correctIntAns);
+            isCorrect = (answerInt == correctIntAns);
             correctStrAns = Integer.toString(correctIntAns);
         }
 
         if (isCorrect) {
             System.out.println("Correct!");
         } else {
-            System.out.println (String.format("'%s' is wrong answer ;(. Correct answer was '%s.'", answer, correctStrAns));
+            System.out.println(
+                    String.format("'%s' is wrong answer ;(. Correct answer was '%s.'", answer, correctStrAns)
+            );
             System.out.println(String.format("Let's try again, %s!", userName));
         }
 
@@ -49,11 +83,11 @@ public class Engine {
     }
 
 
-    public static void play (Scanner scanner) {
+    public static void play(Scanner scanner) {
         int numberOfAttempts = questions.length;
         for (int i = 0; i < numberOfAttempts; i++) {
             showQuestion(questions[i]);
-            if (!checkAnswer(scanner,i)) {
+            if (!checkAnswer(scanner, i)) {
                 return;
             }
         }
@@ -61,7 +95,3 @@ public class Engine {
     }
 
 }
-
-
-
-

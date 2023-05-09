@@ -6,7 +6,7 @@ public class Calc {
     private static final int MAX_NUM = 3;
     private static final int MAX_VAL = 100;
 
-    private static final char[] operations = {'+', '-', '*'};
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
 
     public static void play(Scanner scanner) {
@@ -14,11 +14,11 @@ public class Calc {
         String[] questions = new String[MAX_NUM];
         int[] answers = new int[MAX_NUM];
         for (int i = 0; i < MAX_NUM; i++) {
-            int operatorNumber = Utils.getRandom(3);
+            int operatorNumber = Utils.getRandom(OPERATORS.length);
             int operand1 = Utils.getRandom(MAX_VAL);
             int operand2 = Utils.getRandom(MAX_VAL);
             int correctVal;
-            switch(operatorNumber) {
+            switch (operatorNumber) {
                 case 1:
                     correctVal = operand1 - operand2;
                     break;
@@ -28,13 +28,13 @@ public class Calc {
                 default:
                     correctVal = operand1 + operand2;
             }
-            questions[i] = String.format("%d %c %d ", operand1, operations[operatorNumber], operand2);
+            questions[i] = String.format("%d %c %d ", operand1, OPERATORS[operatorNumber], operand2);
             answers[i] = correctVal;
 
         }
-        Engine.questions = questions;
-        Engine.answersInt = answers;
-        Engine.isStringType = false;
+        Engine.setQuestions(questions);
+        Engine.setAnswersInt(answers);
+        Engine.setIsStringType(false);
 
         Engine.showDescription("What is the result of the expression?");
         Engine.play(scanner);

@@ -15,15 +15,15 @@ public class Gcd {
             int operand1 = Utils.getRandom(MAX_VAL);
             int operand2 = Utils.getRandom(MAX_VAL);
 
-            int correctVal = Utils.gcd(operand1,operand2);
+            int correctVal = Utils.gcd(operand1, operand2);
 
             questions[i] = String.format("%d %d ", operand1, operand2);
             answers[i] = correctVal;
 
         }
-        Engine.questions = questions;
-        Engine.answersInt = answers;
-        Engine.isStringType = false;
+        Engine.setQuestions(questions);
+        Engine.setAnswersInt(answers);
+        Engine.setIsStringType(false);
 
         Engine.showDescription("Find the greatest common divisor of given numbers.");
         Engine.play(scanner);
